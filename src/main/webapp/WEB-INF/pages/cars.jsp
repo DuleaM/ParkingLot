@@ -24,7 +24,10 @@
             <div class="col">
                 User 2
             </div>
+
         </div>
-        <h5>Free parking spots : ${numberOfFreeParkingSpots}</h5>
+
     </div>
+    <h5>Free parking spots : ${numberOfFreeParkingSpots}</h5>
+
 </t:pageTemplate>
