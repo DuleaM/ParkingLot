@@ -7,6 +7,7 @@ import java.util.Collection;
 @Entity
 public class User {
     private Long id;
+    private String username;
     private String email;
     private String password;
 
@@ -35,8 +36,6 @@ public class User {
     public Long getId() {
         return id;
     }
-
-    private String username;
 
     @Basic
     public String getUsername() {
