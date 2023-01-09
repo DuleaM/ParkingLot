@@ -28,16 +28,29 @@
                     <div class="col">
                             ${car.ownerName}
                     </div>
-                    <c:if test="${pageContext.request.isUserInRole('WRITE_CARS')}">
+
                     <div class="col">
-                        <a class="btn btn-secondary" href="${pageContext.request.contextPath}/EditCar?id=${car.id}">Edit Car</a>
+                        <img src="${pageContext.request.contextPath}/CarPhotos?id=${car.id}" witdh="48" height="40"/>
                     </div>
+
+                    <c:if test="${pageContext.request.isUserInRole('WRITE_CARS')}">
+                        <div class="col">
+                            <a class="btn btn-secondary"
+                               href="${pageContext.request.contextPath}/AddCarPhoto?id=${car.id}" role="button">Add photo</a>
+                        </div>
+
+                        <div class="col">
+                            <a class="btn btn-secondary" href="${pageContext.request.contextPath}/EditCar?id=${car.id}">Edit Car</a>
+                        </div>
                     </c:if>
+
                 </div>
             </c:forEach>
         </div>
     </form>
     </div>
-    <h5>Free parking spots : ${numberOfFreeParkingSpots}</h5>
+    <c:if test="${pageContext.request.isUserInRole('WRITE_CARS')}">
+        <h5>Free parking spots: ${numberOfFreeParkingSpots}</h5>
+    </c:if>
 
 </t:pageTemplate>
